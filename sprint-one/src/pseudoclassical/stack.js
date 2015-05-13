@@ -6,6 +6,10 @@ var Stack = function() {
 };
 
 Stack.prototype.size = function() {
-  return 0;
+  return this.length;
+};
+
+Stack.prototype.push = function(value) {
+  this.length++;
 };
 
