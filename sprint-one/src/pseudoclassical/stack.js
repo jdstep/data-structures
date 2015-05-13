@@ -11,11 +11,15 @@ Stack.prototype.size = function() {
 
 Stack.prototype.push = function(value) {
   this.length++;
+  this[this.length] = value;
 };
 
 Stack.prototype.pop = function() {
   if (this.length > 0) {
+    var result = this[this.length];
+    delete this[this.length];
     this.length--;
+    return result;
   }
 };
 
