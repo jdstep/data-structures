@@ -19,7 +19,7 @@ queueMethods.size = function() {
 queueMethods.enqueue = function(value) {
   this.length++;
   this.end++;
-  this[this.front] = value;
+  this[this.end] = value;
 };
 
 queueMethods.dequeue = function() {
