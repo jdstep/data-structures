@@ -22,5 +22,14 @@ stackMethods.push = function(value) {
   this.length++;
 };
 
+stackMethods.pop = function(){
+  var result;
+  if (this.length > 0) {
+    result = this.storage[length];
+    this.length--;
+  }
+  return result;
+};
+
 
 
