@@ -21,3 +21,12 @@ queueMethods.enqueue = function(value) {
   this.end++;
   this[this.front] = value;
 };
+
+queueMethods.dequeue = function() {
+  if (this.length > 0) {
+    var result = this[this.front];
+    this.front++;
+    this.length--;
+    return result;
+  }
+};
