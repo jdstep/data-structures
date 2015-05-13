@@ -25,5 +25,13 @@ queueMethods.enqueue = function(value){
   this[this.end] = value;
 };
 
-
+queueMethods.dequeue = function(){
+  var result;
+  if (this.length > 0){
+    result = this[this.front];
+    this.front++;
+    this.length--;
+  }
+  return result;
+};
 
