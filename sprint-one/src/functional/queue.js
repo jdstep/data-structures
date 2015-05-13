@@ -4,14 +4,15 @@ var Queue = function(){
   // Use an object with numeric keys to store values
   var storage = {};
   var numItems = 0;
-  var lowestItem = 0;
+  var lowestItem = 1;
+  var totalNumItemsQueued = 0;
 
   // Implement the methods below
 
   someInstance.enqueue = function(value){
-    lowestItem++;
-    storage[lowestItem] = value;
+    storage[totalNumItemsQueued+1] = value;
     numItems++;
+    totalNumItemsQueued++;
   };
 
   someInstance.dequeue = function(){
