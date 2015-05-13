@@ -13,6 +13,11 @@ var Queue = function() {
 var queueMethods = {};
 
 queueMethods.size = function() {
-  return 0;
+  return this.length;
 };
 
+queueMethods.enqueue = function(value) {
+  this.length++;
+  this.end++;
+  this[this.front] = value;
+};
