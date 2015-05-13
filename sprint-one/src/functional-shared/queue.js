@@ -5,7 +5,7 @@ var Queue = function(){
   var storage = {};
 
   storage.length = 0;
-  storage.front = 0;
+  storage.front = 1;
   storage.end = 0;
 
   _.extend(storage, queueMethods);
@@ -16,7 +16,13 @@ var Queue = function(){
 var queueMethods = {};
 
 queueMethods.size = function(){
-  return 0;
+  return this.length;
+};
+
+queueMethods.enqueue = function(value){
+  this.length++;
+  this.end++;
+  this[this.end] = value;
 };
 
 
