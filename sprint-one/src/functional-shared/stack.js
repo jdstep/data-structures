@@ -5,7 +5,7 @@ var Stack = function() {
 
   stack.storage = {};
 
-  stack.size = 0;
+  stack.length = 0;
   _.extend(stack, stackMethods);
 
   return stack;
@@ -14,7 +14,12 @@ var Stack = function() {
 var stackMethods = {};
 
 stackMethods.size = function(){
-  return 0;
+  return this.length;
+};
+
+stackMethods.push = function(value) {
+  this.storage[length] = value;
+  this.length++;
 };
 
 
