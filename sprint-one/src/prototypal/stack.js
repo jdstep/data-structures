@@ -15,11 +15,15 @@ stackMethods.size = function() {
 
 stackMethods.push = function(value) {
   this.length++;
+  this[this.length] = value;
 };
 
 stackMethods.pop = function() {
   if (this.length > 0) {
+    var result = this[this.length];
+    delete this[this.length];
     this.length--;
+    return result;
   }
 };
 
