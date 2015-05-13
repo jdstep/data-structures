@@ -13,3 +13,9 @@ Stack.prototype.push = function(value) {
   this.length++;
 };
 
+Stack.prototype.pop = function() {
+  if (this.length > 0) {
+    this.length--;
+  }
+};
+
