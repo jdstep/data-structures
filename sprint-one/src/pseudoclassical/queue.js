@@ -3,7 +3,7 @@ var Queue = function() {
   // but try not not reference your old code in writing the new style.
   //
   this.length = 0;
-  this.front = 0;
+  this.front = 1;
   this.end = 0;
 };
 
@@ -13,13 +13,16 @@ Queue.prototype.size = function (){
 
 Queue.prototype.enqueue = function(value){
   this.length++;
-  this.front++;
+  this.end++;
+  this[this.end] = value;
 };
 
 Queue.prototype.dequeue = function(){
   if (this.length > 0) {
-  this.length--;
-  this.front++;
+    var result =  this[this.front];
+    this.length--;
+    this.front++;
+    return result;
   }
 };
 
