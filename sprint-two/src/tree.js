@@ -6,6 +6,7 @@ var Tree = function(value){
   newTree.children = [];  // fix me
 
   _.extend(newTree, treeMethods);
+
   return newTree;
 };
 
@@ -23,6 +24,38 @@ treeMethods.addChild = function(value){
 };
 
 treeMethods.contains = function(target){
+    //
+  // if (this.children.length === 0) {
+  //   return this.value === target;
+  // } else {
+  //   _.each(this.children, function(innerNode){
+  //     return innerNode.value === target;
+  //   });
+  // }
+
+
+  var hasTarget = false;
+
+
+  var traverse = function(node) {
+    if (node.value === target){
+      hasTarget = true;
+    } else {
+      _.each(node.children, function(innerNode){
+          traverse(innerNode);
+        });
+      }
+  };
+
+  if (this.value === target) {
+    hasTarget = true;
+  } else {
+    _.each(this.children, function(innerNode){
+      traverse(innerNode);
+    });
+  }
+
+  return hasTarget;
 
 };
 
