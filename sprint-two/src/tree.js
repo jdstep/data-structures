@@ -59,6 +59,9 @@ treeMethods.contains = function(target){
 
 };
 
+// traverse accepts node and target
+// returns the node that matches target
+// otherwise matches undefined
 
 /*
  * Complexity: What is the time complexity of the above functions?
