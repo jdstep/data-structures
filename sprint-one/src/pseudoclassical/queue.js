@@ -8,7 +8,11 @@ var Queue = function() {
 };
 
 Queue.prototype.size = function (){
-  return 0;
+  return this.length;
 };
 
+Queue.prototype.enqueue = function(value){
+  this.length++;
+  this.front++;
+};
 
