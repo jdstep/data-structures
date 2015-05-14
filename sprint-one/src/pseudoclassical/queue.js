@@ -16,3 +16,10 @@ Queue.prototype.enqueue = function(value){
   this.front++;
 };
 
+Queue.prototype.dequeue = function(){
+  if (this.length > 0) {
+  this.length--;
+  this.front++;
+  }
+};
+
