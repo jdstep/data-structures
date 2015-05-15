@@ -3,6 +3,7 @@ var LinkedList = function(){
   list.head = null;
   list.tail = null;
 
+  // constant time with respect to number of nodes
   list.addToTail = function(value){
     // debugger;
     var newNode = Node(value);
@@ -14,6 +15,7 @@ var LinkedList = function(){
     list.tail = newNode;
   };
 
+  // constant time with respect to number of nodes
   list.removeHead = function(){
     var poppedValue = list.head.value;
     var nextHead = list.head.next;
@@ -22,6 +24,7 @@ var LinkedList = function(){
     return poppedValue;
   };
 
+  // linear time with respect to number of nodes
   list.contains = function(target){
     var traverse = function(currentNode) {
       if (currentNode.value === target) {
