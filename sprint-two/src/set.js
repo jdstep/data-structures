@@ -6,14 +6,17 @@ var Set = function(){
 
 var setPrototype = {};
 
+// constant time with respect to number of elements on set
 setPrototype.add = function(item){
   this._storage.push(item);
 };
 
+// linear time with respect to number of elements on set
 setPrototype.contains = function(item){
   return _.contains(this._storage, item);
 };
 
+// linear time with respect to number of elements on set
 setPrototype.remove = function(item){
   var indexToDelete = _.indexOf(this._storage, item);
 
