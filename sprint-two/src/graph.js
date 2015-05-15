@@ -37,9 +37,15 @@ Graph.prototype.removeNode = function(node){
 };
 
 Graph.prototype.hasEdge = function(fromNode, toNode){
+  if (this[fromNode].indexOf(toNode) > -1) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 Graph.prototype.addEdge = function(fromNode, toNode){
+  this[fromNode].push(toNode);
 };
 
 Graph.prototype.removeEdge = function(fromNode, toNode){
