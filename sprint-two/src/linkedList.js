@@ -19,7 +19,6 @@ var LinkedList = function(){
   list.removeHead = function(){
     var poppedValue = list.head.value;
     var nextHead = list.head.next;
-    delete list.head;
     list.head = nextHead;
     return poppedValue;
   };
