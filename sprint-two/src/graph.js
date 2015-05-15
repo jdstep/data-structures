@@ -50,14 +50,17 @@ Graph.prototype.addEdge = function(fromNode, toNode){
 };
 
 Graph.prototype.removeEdge = function(fromNode, toNode){
-  debugger;
+  // debugger;
   var indexToDelete = this[fromNode].indexOf(toNode);
   this[fromNode].splice(indexToDelete, 1);
 };
 
 Graph.prototype.forEachNode = function(cb){
   for (var key in this) {
-    cb(key);
+    if (this.hasOwnProperty(key)){
+      cb(key);
+    }
+    // console.log(key);
   }
 };
 
