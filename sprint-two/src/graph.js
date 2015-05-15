@@ -11,7 +11,7 @@ var Graph = function(){
 
 Graph.prototype.addNode = function(node){
   // debugger;
-  this.kittens = [];
+  this[node] = [];
 };
 
 Graph.prototype.contains = function(node){
@@ -32,6 +32,8 @@ Graph.prototype.contains = function(node){
 };
 
 Graph.prototype.removeNode = function(node){
+  // debugger;
+  delete this[node];
 };
 
 Graph.prototype.hasEdge = function(fromNode, toNode){
@@ -44,6 +46,9 @@ Graph.prototype.removeEdge = function(fromNode, toNode){
 };
 
 Graph.prototype.forEachNode = function(cb){
+  // for (var key in this) {
+  //   cb(this.key)
+  // }
 };
 
 /*
