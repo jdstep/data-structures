@@ -46,15 +46,19 @@ Graph.prototype.hasEdge = function(fromNode, toNode){
 
 Graph.prototype.addEdge = function(fromNode, toNode){
   this[fromNode].push(toNode);
+  this[toNode].push(fromNode);
 };
 
 Graph.prototype.removeEdge = function(fromNode, toNode){
+  debugger;
+  var indexToDelete = this[fromNode].indexOf(toNode);
+  this[fromNode].splice(indexToDelete, 1);
 };
 
 Graph.prototype.forEachNode = function(cb){
-  // for (var key in this) {
-  //   cb(this.key)
-  // }
+  for (var key in this) {
+    cb(key);
+  }
 };
 
 /*
