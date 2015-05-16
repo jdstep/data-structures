@@ -65,6 +65,22 @@ BinarySearchTree.actions.contains = function(value) {
 
 BinarySearchTree.actions.depthFirstLog = function(callback) {
 
+  var traverse = function(node){
+
+    callback(node.value);
+
+    if (node.left !== null) {
+      traverse(node.left);
+    }
+
+    if (node.right !== null) {
+      traverse(node.right);
+    }
+
+  };
+
+  traverse(this);
+
 };
 
 BinarySearchTree.actions.traverse = function(node, target, test) {
