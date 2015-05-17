@@ -21,7 +21,7 @@ treeMethods.addChild = function(value){
 
 };
 
-//
+// linear time with respect to the number of nodes
 treeMethods.contains = function(target){
   var hasTarget = false;
 

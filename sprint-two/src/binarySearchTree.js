@@ -10,6 +10,7 @@ var BinarySearchTree = function(value){
 
 BinarySearchTree.actions = {};
 
+// log n time with respect to number of nodes
 BinarySearchTree.actions.insert = function(value) {
   // if the return from traverse is null
   //   set the return from traverse to be a new tree with given value
@@ -40,6 +41,7 @@ traverse(this);
 
 };
 
+// log n time with respect to the number of nodes
 BinarySearchTree.actions.contains = function(value) {
 
   var hasValue = false;
@@ -48,11 +50,10 @@ BinarySearchTree.actions.contains = function(value) {
     if (value === node.value) {
       hasValue = true;
     } else {
-      // pass in node.left into traverse
-      if (node.left !== null) {
-        traverse(node.left);
+      if (node.value > value && node.left !== null) {
+          traverse(node.left);
       }
-      if (node.right !== null){
+      if (node.value < value && node.right !== null) {
         traverse(node.right);
       }
     }
@@ -63,6 +64,7 @@ BinarySearchTree.actions.contains = function(value) {
   return hasValue;
 };
 
+// linear time with respect to the number of nodes
 BinarySearchTree.actions.depthFirstLog = function(callback) {
 
   var traverse = function(node){
